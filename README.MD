@@ -1,3 +1,3 @@
-Template of Vite.js with React, Styled-components
+# Simple ecommerce with React, StyledComponents and API of Platzi
 
-![alt text](./img.png)
+![alt text](./src/assets/images/logotipo.png)
