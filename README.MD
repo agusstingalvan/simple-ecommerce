@@ -1,4 +1,3 @@
-Steam specials offers [React, API, StyledComponents]
-Simple consumicion de api. Y mostrar en pantalla.
+Template of Vite.js with React, Styled-components
 
-![alt text](./steamoffers.png)
+![alt text](./img.png)
