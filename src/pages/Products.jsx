@@ -51,7 +51,7 @@ const Products = () => {
         <Container>
             <section>
                 <Title>All products in our store</Title>
-                <Search />
+                <Search products={products} setProducts={setProducts}/>
                 <CategoriesTags handleButtonCategory={handleButtonCategory} categories={categories} />
                 <Subtitle>
 

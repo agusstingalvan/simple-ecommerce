@@ -35,18 +35,23 @@ const SearchButton = styled.button`
   }
 `;
 
-const Search = () => {
-  const [search, setSearch] = React.useState();
+const Search = ({setProducts}) => {
+  const [search, setSearch] = React.useState('');
 
-  const handleSubmit = () => {
-    // buscar al producto.
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if(!search.trim()) return
+    getSingleProduct(search).then(arr => {
+      if(arr.length === 0){
+        return
+      }else{
+        setProducts(arr);
+      }
+    })
   }
   return (
     <Form onSubmit={handleSubmit}>
-      <Input type="text" placeholder='Search for a product...' value={search} onChange={(e) => {
-        console.log(e.target.value);
-        // setSearch(e.target.value);
-      }} />
+      <Input type="text" placeholder='Search for a product...' value={search} onChange={(e) => setSearch(e.target.value)} />
       <SearchButton type='submit'>Search</SearchButton>
     </Form>
   )
