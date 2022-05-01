@@ -3,9 +3,7 @@ import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import iconCarrito from '../assets/icons/bolsa-de-la-compra.svg';
 
-const BarDesktop = () => {
-
-    const BarDesk = styled.nav`
+const BarDesk = styled.nav`
         display: none;
         @media (min-width: 768px){
             display: flex;
@@ -13,7 +11,7 @@ const BarDesktop = () => {
             gap: 1rem;
         }
     `;
-    const Button = styled(Link)`
+const Button = styled(Link)`
         border-width: 0.18rem;
         border-style: solid;
         border-color: transparent;  
@@ -29,11 +27,14 @@ const BarDesktop = () => {
         }
         transition: all 0.1s ease;
     `;
+const BarDesktop = () => {
+
+
     return (
         <BarDesk>
             <Button to="/">Inicio</Button>
             <Button to="/productos">Productos</Button>
-            <Button to="/carrito"><img width={24}  src={iconCarrito} alt="Icon of shop" /></Button>
+            <Button to="/carrito"><img width={24} src={iconCarrito} alt="Icon of shop" /></Button>
         </BarDesk>
     )
 }

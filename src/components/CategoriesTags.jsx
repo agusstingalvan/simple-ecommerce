@@ -1,8 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-
-const CategoriesTags = ({ handleButtonCategory, categories }) => {
-    const TagsContainer = styled.div`
+const TagsContainer = styled.div`
         display: flex;
         justify-content: center;
         align-items: center;
@@ -13,7 +11,7 @@ const CategoriesTags = ({ handleButtonCategory, categories }) => {
             gap: 1rem;
         }
     `;
-    const Tag = styled.button`
+const Tag = styled.button`
         background-color: ${(props) => props.theme.secondary};
         color: white;
         padding: 0.4rem;
@@ -21,6 +19,8 @@ const CategoriesTags = ({ handleButtonCategory, categories }) => {
         border: none;
         border-radius: 0.625rem; 
     `;
+const CategoriesTags = ({ handleButtonCategory, categories }) => {
+
     return (
         <TagsContainer>
             {

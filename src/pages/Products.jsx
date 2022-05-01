@@ -4,6 +4,23 @@ import styled from 'styled-components';
 import Search from '../components/Search';
 import CategoriesTags from '../components/CategoriesTags';
 
+const Container = styled.div`
+      max-width: 1024px;
+      width: 90%;
+      margin: 0 auto;  
+    `;
+const Title = styled.h1`
+      margin-bottom: 2rem;
+      font-weight: 300;
+      text-align: center;
+    `;
+const Subtitle = styled.h3`
+      margin-bottom: 1rem;
+      font-weight: 300;
+      text-align: left;
+      margin-left: 1rem;
+    `;
+
 const Products = () => {
     const [products, setProducts] = React.useState([]);
     const [count, setCount] = React.useState(0);
@@ -25,23 +42,8 @@ const Products = () => {
         API.getCategoryProducts(id).then(setProducts);
         setValueNameCategory(name);
     };
-    
-    const Container = styled.div`
-      max-width: 1024px;
-      width: 90%;
-      margin: 0 auto;  
-    `;
-    const Title = styled.h1`
-      margin-bottom: 2rem;
-      font-weight: 300;
-      text-align: center;
-    `;
-    const Subtitle = styled.h3`
-      margin-bottom: 1rem;
-      font-weight: 300;
-      text-align: left;
-      margin-left: 1rem;
-    `;
+
+
 
 
 
@@ -49,7 +51,7 @@ const Products = () => {
         <Container>
             <section>
                 <Title>All products in our store</Title>
-                <Search/>
+                <Search />
                 <CategoriesTags handleButtonCategory={handleButtonCategory} categories={categories} />
                 <Subtitle>
 

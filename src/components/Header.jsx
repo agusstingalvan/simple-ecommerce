@@ -5,15 +5,12 @@ import BarDesktop from './BarDesktop';
 import BarMovil from './BarMovil';
 import { Link } from 'react-router-dom';
 
-const Header = () => {
-    const refMenu = React.useRef();
-
-    const Container = styled.div`
+const Container = styled.div`
       max-width: 1024px;
       width: 90%;
       margin: 0 auto;  
     `;
-    const Header = styled.header`
+    const HeaderContainer = styled.header`
         display: flex;
         justify-content: space-between;
         align-items: center;
@@ -62,6 +59,9 @@ const Header = () => {
         }
         transition: all 0.1s ease;
     `;
+const Header = () => {
+    const refMenu = React.useRef();
+
     /*La funcion openMenu, abre el menu, translandolo al la posicion 0, 
         La funcion closeMenu lo translada fuera de la pantalla con un -100%
     */
@@ -76,7 +76,7 @@ const Header = () => {
 
     return (
         <Container>
-            <Header>
+            <HeaderContainer>
                 <Logotipo src={logo} alt="Logotipo of the web" />
                 <BarMovil openMenu={openMenu} />
                 <Panel ref={refMenu} onClick={(e)=>closeMenu(e)}>
@@ -87,7 +87,7 @@ const Header = () => {
                     </ul>
                 </Panel>
                 <BarDesktop />
-            </Header>
+            </HeaderContainer>
         </Container>
     )
 }
