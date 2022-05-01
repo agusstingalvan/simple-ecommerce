@@ -25,7 +25,7 @@ const BarMovil = ({ openMenu }) => {
     // }
     return (
         <Bar>
-            <ButtonBar type='button' onClick={openMenu}><img width={18} src={barIcon} alt="Icon for open the menu movil" /></ButtonBar>
+            <ButtonBar type='button' onClick={openMenu}><img width={18} src={`.${barIcon}`} alt="Icon for open the menu movil" /></ButtonBar>
 
         </Bar>
     )

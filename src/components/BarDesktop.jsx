@@ -34,7 +34,7 @@ const BarDesktop = () => {
         <BarDesk>
             <Button to="/">Inicio</Button>
             <Button to="/productos">Productos</Button>
-            <Button to="/carrito"><img width={24} src={iconCarrito} alt="Icon of shop" /></Button>
+            <Button to="/carrito"><img width={24} src={`.${iconCarrito}`} alt="Icon of shop" /></Button>
         </BarDesk>
     )
 }

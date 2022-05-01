@@ -115,7 +115,7 @@ Error generating stack: `+o.message+`
             border-color: ${e=>e.theme.secondary};  
         }
         transition: all 0.1s ease;
-    `,M0=()=>pt(I0,{children:[B(hi,{to:"/",children:"Inicio"}),B(hi,{to:"/productos",children:"Productos"}),B(hi,{to:"/carrito",children:B("img",{width:24,src:N0,alt:"Icon of shop"})})]});var j0="/assets/menu-hamburguesa.936ac8a2.svg";const D0=$e.nav`
+    `,M0=()=>pt(I0,{children:[B(hi,{to:"/",children:"Inicio"}),B(hi,{to:"/productos",children:"Productos"}),B(hi,{to:"/carrito",children:B("img",{width:24,src:`.${N0}`,alt:"Icon of shop"})})]});var j0="/assets/menu-hamburguesa.936ac8a2.svg";const D0=$e.nav`
         @media  (min-width: 768px){
             display: none;
         }
@@ -127,7 +127,7 @@ Error generating stack: `+o.message+`
         background-color: transparent;
         border: none;
         outline: none;
-    `,U0=({openMenu:e})=>B(D0,{children:B(F0,{type:"button",onClick:e,children:B("img",{width:18,src:j0,alt:"Icon for open the menu movil"})})}),B0=$e.div`
+    `,U0=({openMenu:e})=>B(D0,{children:B(F0,{type:"button",onClick:e,children:B("img",{width:18,src:`.${j0}`,alt:"Icon for open the menu movil"})})}),B0=$e.div`
       max-width: 1024px;
       width: 90%;
       margin: 0 auto;  
@@ -176,7 +176,7 @@ Error generating stack: `+o.message+`
 
         }
         transition: all 0.1s ease;
-    `,Q0=()=>{const e=Ue.useRef(),t=()=>{e.current.style.transform="translateX(0)"},n=r=>{r.target.localName!=="a"&&(e.current.style.transform="translateX(100%)")};return B(B0,{children:pt(V0,{children:[B(H0,{src:$0,alt:"Logotipo of the web"}),B(U0,{openMenu:t}),B(W0,{ref:e,onClick:r=>n(r),children:pt("ul",{children:[B(mi,{to:"/",children:"Inicio"}),B(mi,{to:"/productos",children:"Productos"}),B(mi,{to:"/carrito",children:"Carrito"})]})}),B(M0,{})]})})},Y0=e=>pt(Rd,{children:[B(Q0,{}),e.children]}),K0="https://api.escuelajs.co/api/v1",G0=()=>fetch(`${K0}/products`).then(e=>e.json()).then(e=>e).catch(e=>console.err(e)),X0="https://api.escuelajs.co/api/v1",Z0=(e=0,t=10)=>fetch(`${X0}/products?offset=${e}&limit=${t}`).then(n=>n.json()).then(n=>n),J0="https://api.escuelajs.co/api/v1",q0=()=>fetch(`${J0}/categories`).then(e=>e.json()).then(e=>e),b0="https://api.escuelajs.co/api/v1",ev=(e=1)=>fetch(`${b0}/categories/${e}/products`).then(t=>t.json()).then(t=>t),tv=e=>G0().then(t=>{let n=null,r=[],l=[];t.some(o=>{o.title.toLowerCase().includes(e.toLowerCase())&&(n=o.id,r.push(n))});for(let o of r){let i=t.find(u=>u.id==o);l.push(i)}return l}),nv=$e.form`
+    `,Q0=()=>{const e=Ue.useRef(),t=()=>{e.current.style.transform="translateX(0)"},n=r=>{r.target.localName!=="a"&&(e.current.style.transform="translateX(100%)")};return B(B0,{children:pt(V0,{children:[B(H0,{src:`.${$0}`,alt:"Logotipo of the web"}),B(U0,{openMenu:t}),B(W0,{ref:e,onClick:r=>n(r),children:pt("ul",{children:[B(mi,{to:"/",children:"Inicio"}),B(mi,{to:"/productos",children:"Productos"}),B(mi,{to:"/carrito",children:"Carrito"})]})}),B(M0,{})]})})},Y0=e=>pt(Rd,{children:[B(Q0,{}),e.children]}),K0="https://api.escuelajs.co/api/v1",G0=()=>fetch(`${K0}/products`).then(e=>e.json()).then(e=>e).catch(e=>console.err(e)),X0="https://api.escuelajs.co/api/v1",Z0=(e=0,t=10)=>fetch(`${X0}/products?offset=${e}&limit=${t}`).then(n=>n.json()).then(n=>n),J0="https://api.escuelajs.co/api/v1",q0=()=>fetch(`${J0}/categories`).then(e=>e.json()).then(e=>e),b0="https://api.escuelajs.co/api/v1",ev=(e=1)=>fetch(`${b0}/categories/${e}/products`).then(t=>t.json()).then(t=>t),tv=e=>G0().then(t=>{let n=null,r=[],l=[];t.some(o=>{o.title.toLowerCase().includes(e.toLowerCase())&&(n=o.id,r.push(n))});for(let o of r){let i=t.find(u=>u.id==o);l.push(i)}return l}),nv=$e.form`
 display: flex;
 justify-content: center;
 margin-bottom: 2rem;

@@ -77,7 +77,7 @@ const Header = () => {
     return (
         <Container>
             <HeaderContainer>
-                <Logotipo src={logo} alt="Logotipo of the web" />
+                <Logotipo src={`.${logo}`} alt="Logotipo of the web" />
                 <BarMovil openMenu={openMenu} />
                 <Panel ref={refMenu} onClick={(e)=>closeMenu(e)}>
                     <ul>
