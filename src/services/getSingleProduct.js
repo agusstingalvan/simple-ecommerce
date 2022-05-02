@@ -15,7 +15,7 @@ const getSingleProduct = (name) => {
             resArray.push(filtro);
         }
         return resArray;
-    });
+    }).catch(console.log)
     // console.log(array)
     // return array.find((element)=>{
     //     console.log(element.title.includes(name))

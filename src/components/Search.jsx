@@ -37,23 +37,33 @@ const SearchButton = styled.button`
 
 const Search = ({setProducts}) => {
   const [search, setSearch] = React.useState('');
-
+  const [err, setErr] = React.useState(null)
   const handleSubmit = (e) => {
     e.preventDefault();
-    if(!search.trim()) return
+    if(!search.trim()) {
+      setErr(null);
+      return
+    }
     getSingleProduct(search).then(arr => {
       if(arr.length === 0){
-        return
+        setErr('The product not found')
+        return 
       }else{
+        setErr(null);
         setProducts(arr);
       }
     })
   }
   return (
+    <>
     <Form onSubmit={handleSubmit}>
       <Input type="text" placeholder='Search for a product...' value={search} onChange={(e) => setSearch(e.target.value)} />
       <SearchButton type='submit'>Search</SearchButton>
     </Form>
+    {
+      err !== null && <p>{err}</p>
+    }
+    </>
   )
 }
 
