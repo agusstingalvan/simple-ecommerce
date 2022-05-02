@@ -6,6 +6,7 @@ import styled from 'styled-components';
 import Layout from './components/Layout';
 import { Route, Routes } from 'react-router-dom';
 import Products from './pages/Products';
+import Product from './pages/Product';
 
 
 const App = () => {
@@ -17,7 +18,9 @@ const App = () => {
         <Layout>
           <Routes>
             <Route path="/" element={"Hola mundo"}/>
-            <Route path="/productos" element={<Products/>}/>
+            <Route path="/products" element={<Products/>}/>
+            <Route path="/product/:id" element={<Product/>}/>
+            <Route path="/cart" element={'Carrito'}/>
           </Routes>
         </Layout>
       </ThemeProvider>

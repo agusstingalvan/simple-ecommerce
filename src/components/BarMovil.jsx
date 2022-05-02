@@ -17,16 +17,9 @@ const ButtonBar = styled.button`
         outline: none;
     `;
 const BarMovil = ({ openMenu }) => {
-
-
-    // const openMenu = () => {
-    //     // console.log(refMenu.current.style)
-    //     // refMenu.current.style.transform = 'translate(0)';
-    // }
     return (
         <Bar>
-            <ButtonBar type='button' onClick={openMenu}><img width={18} src={`.${barIcon}`} alt="Icon for open the menu movil" /></ButtonBar>
-
+            <ButtonBar type='button' onClick={openMenu}><img width={18} src={barIcon} alt="Icon for open the menu movil" /></ButtonBar>
         </Bar>
     )
 }

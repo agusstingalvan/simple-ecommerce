@@ -17,7 +17,11 @@ const Tag = styled.button`
         padding: 0.4rem;
         font-size: 0.625rem;
         border: none;
-        border-radius: 0.625rem; 
+        border-radius: 0.625rem;
+        transition: background-color 0.2s ease;
+        &:hover{
+            background-color: #525291;
+        }
     `;
 const CategoriesTags = ({ handleButtonCategory, categories }) => {
 

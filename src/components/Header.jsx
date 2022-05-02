@@ -77,13 +77,13 @@ const Header = () => {
     return (
         <Container>
             <HeaderContainer>
-                <Logotipo src={`.${logo}`} alt="Logotipo of the web" />
+                <Logotipo src={logo} alt="Logotipo of the web" />
                 <BarMovil openMenu={openMenu} />
                 <Panel ref={refMenu} onClick={(e)=>closeMenu(e)}>
                     <ul>
-                        <Button to="/">Inicio</Button>
-                        <Button to="/productos">Productos</Button>
-                        <Button to="/carrito">Carrito</Button>
+                        <Button to="/">Home</Button>
+                        <Button to="/products">Products</Button>
+                        <Button to="/cart">Cart</Button>
                     </ul>
                 </Panel>
                 <BarDesktop />

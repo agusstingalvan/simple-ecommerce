@@ -3,6 +3,7 @@ import * as API from '../services/index';
 import styled from 'styled-components';
 import Search from '../components/Search';
 import CategoriesTags from '../components/CategoriesTags';
+import CardProduct from '../components/CardProduct';
 
 const Container = styled.div`
       max-width: 1024px;
@@ -59,8 +60,11 @@ const Products = () => {
                         valueNameCategory ? (`${valueNameCategory} products:`) : 'All products:'
                     }
                 </Subtitle>
-                <button onClick={handleVerMas}>Ver más</button>
                 {
+                    products.map(product => <CardProduct key={product.id} title={product.title} price={product.price} category={product.category.name} image={product.images[0]} id={product.id}/>)
+                }
+                <button onClick={handleVerMas}>Ver más</button>
+                {/* {
                     products.map(product => <article key={product.id} >
                         <h3 >{product.title}</h3>
                         <p><i>{product.description}</i></p>
@@ -70,7 +74,8 @@ const Products = () => {
                         </div>
                         <img src={product.images[0]} width={120} alt={product.title} />
                     </article>)
-                }
+                } */}
+                
             </section>
         </Container>
     )
