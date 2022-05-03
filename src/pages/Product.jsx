@@ -1,24 +1,42 @@
 import React from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import { getProductById } from '../services/index.js';
+import styled from 'styled-components';
+import { Loading } from '../components/Loading.jsx';
+
+const Container = styled.div`
+      max-width: 1024px;
+      width: 90%;
+      margin: 0 auto;  
+`;
+const ProductContent = styled.div`
+    display: block;
+
+`;
+const Title = styled.h2`
+  font-size: 1.125rem;
+
+`;
 const Product = () => {
+  const [product, setProduct] = React.useState({});
+
   let { id } = useParams();
   const navigate = useNavigate();
 
-  const [product, setProduct] = React.useState({});
+
   React.useEffect(() => {
     getProductById(id).then(setProduct);
   }, [])
-  
+
   const handleBack = () => {
     navigate(-1);
   }
   return (
-    <>
+    <Container>
       {
         product.hasOwnProperty('id') ? (
           <div>
-            <h2>{product.title}</h2>
+            <Title>{product.title}</Title>
             <p>{product.description}</p>
             <p>{product.price}</p>
             <p>{product.category.name}</p>
@@ -26,10 +44,10 @@ const Product = () => {
             <button>Add to cart</button>
             <button onClick={handleBack}>Back</button>
           </div>
-        ) : 
-        ('loading')
+        ) :
+          (<Loading/>)
       }
-    </>
+    </Container>
   )
 }
 

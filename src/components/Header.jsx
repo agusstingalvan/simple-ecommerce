@@ -23,6 +23,7 @@ const Container = styled.div`
         vertical-align: middle;
     `;
     const Panel = styled.nav`
+        z-index: 100;
         position: fixed;
         top: 0;
         bottom: 0;
@@ -69,7 +70,7 @@ const Header = () => {
         refMenu.current.style.transform = 'translateX(0)';
     }
     const closeMenu = (event) =>{
-        if(event.target.localName !== 'a' ){
+        if(event.target.localName !== 'a'){
             refMenu.current.style.transform = 'translateX(100%)';
         }
     }

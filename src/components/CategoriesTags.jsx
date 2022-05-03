@@ -5,9 +5,11 @@ const TagsContainer = styled.div`
         justify-content: center;
         align-items: center;
         gap: 0.5rem;
-        margin-bottom: 2rem;
+        margin-bottom: 1rem;
+        overflow-x: scroll;
+        padding: 1rem;
         @media (min-width: 768px){
-            
+            overflow-x: unset;
             gap: 1rem;
         }
     `;
@@ -24,7 +26,6 @@ const Tag = styled.button`
         }
     `;
 const CategoriesTags = ({ handleButtonCategory, categories }) => {
-
     return (
         <TagsContainer>
             {

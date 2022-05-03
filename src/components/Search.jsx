@@ -5,7 +5,7 @@ import { getSingleProduct } from '../services/index';
 const Form = styled.form`
 display: flex;
 justify-content: center;
-margin-bottom: 2rem;
+margin-bottom: 1rem;
 `;
 const Input = styled.input`
   background-color: #e1e1e1;
@@ -35,7 +35,7 @@ const SearchButton = styled.button`
   }
 `;
 
-const Search = ({setProducts}) => {
+const Search = ({setProducts, setLoading}) => {
   const [search, setSearch] = React.useState('');
   const [err, setErr] = React.useState(null)
   const handleSubmit = (e) => {
@@ -51,6 +51,7 @@ const Search = ({setProducts}) => {
       }else{
         setErr(null);
         setProducts(arr);
+        setLoading(true)
       }
     })
   }
