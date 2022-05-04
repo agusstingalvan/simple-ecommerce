@@ -2,6 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import iconCarrito from '../assets/icons/bolsa-de-la-compra.svg';
+import { CartProvider } from '../stateManage/CartContext';
 
 const BarDesk = styled.nav`
         display: none;
@@ -28,13 +29,15 @@ const Button = styled(Link)`
         transition: all 0.1s ease;
     `;
 const BarDesktop = () => {
+    const {cart} = React.useContext(CartProvider);
 
+    
 
     return (
         <BarDesk>
             <Button to="/">Home</Button>
             <Button to="/products">Products</Button>
-            <Button to="/cart"><img width={24} src={iconCarrito} alt="Icon of shop" /></Button>
+            <Button to="/cart"><img width={24} src={iconCarrito} alt="Icon of shop" /> {cart.length}</Button>
         </BarDesk>
     )
 }

@@ -22,7 +22,23 @@ const Subtitle = styled.h3`
       text-align: left;
       margin-left: 1rem;
     `;
-
+const Button = styled.button`
+    margin: 1rem;
+    border-width: 0.18rem;
+    border-style: solid;
+    border-color: transparent;  
+    color: ${(props) => props.theme.secondary};
+    padding: 0.5rem 0.6rem;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 0.875rem;
+    font-weight: 700;
+    transition: all 0.1s ease;
+    &:hover{
+        background-color: ${(props) => props.theme.primary};
+        border-color: ${(props) => props.theme.secondary};  
+    }
+`;
 const Products = () => {
     const [products, setProducts] = React.useState([]);
     const [count, setCount] = React.useState(0);
@@ -49,9 +65,9 @@ const Products = () => {
 
     const handleButtonCategory = (id, name) => {
         API.getCategoryProducts(id).then(data => {
-            if(data.length === 0){
+            if (data.length === 0) {
                 setLoading(null);
-            }else{
+            } else {
                 setProducts(data);
                 setLoading(true)
             }
@@ -67,7 +83,7 @@ const Products = () => {
         <Container>
             <section>
                 <Title>All products in our store</Title>
-                <Search products={products} setProducts={setProducts} setLoading={setLoading}/>
+                <Search products={products} setProducts={setProducts} setLoading={setLoading} />
                 {
                     loading === null ? <Loading /> : (
                         <>
@@ -80,7 +96,7 @@ const Products = () => {
                             {
                                 products.map(product => <CardProduct key={product.id} title={product.title} price={product.price} category={product.category.name} image={product.images[0]} id={product.id} />)
                             }
-                            <button onClick={handleVerMas}>Ver más</button>
+                            <Button onClick={handleVerMas}>View more</Button>
                         </>
                     )
                 }
