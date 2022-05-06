@@ -90,13 +90,15 @@ const Product = () => {
   const handleBack = () => {
     navigate(-1);
   }
+  
   const handleAddToCart = () =>{
     let item = {
       title: product.title,
       description: product.description,
       price: product.price,
       category: product.category.name,
-      image: product.images[0]
+      image: product.images[0],
+      id: product.id
     }
     addCart(item);
   }
